@@ -32,6 +32,56 @@ Text Parsing	  PyMuPDF
 Orchestration	  LangChain
 
 
+Visual Architectur Diagram: 
+              ┌────────────────────────┐
+              │   User Uploads PDF     │
+              └─────────┬──────────────┘
+                        │
+                        ▼
+           ┌─────────────────────────────┐
+           │     Load & Split Document   │
+           │  (e.g.,by paragraphs/chunks)|
+           └─────────┬───────────────────┘
+                     │
+                     ▼
+           ┌──────────────────────────────┐
+           │ Embed Text into Vectors      │
+           │ (via OpenAI or Transformers) │
+           └─────────┬────────────────────┘
+                     │
+                     ▼
+           ┌────────────────────────┐
+           │   Store in Vector DB   │
+           │       (e.g., FAISS)    │
+           └─────────┬──────────────┘
+                     │
+           ┌─────────▼──────────┐
+           │   User Asks a Q    │
+           └─────────┬──────────┘
+                     ▼
+          ┌─────────────────────────────┐
+          │ Convert Q to Vector         │
+          └─────────┬───────────────────┘
+                    ▼
+          ┌──────────────────────────────┐
+          │ Retrieve Similar Chunks      │
+          │ from Vector DB (top 3–5)     │
+          └─────────┬────────────────────┘
+                    ▼
+          ┌──────────────────────────────┐
+          │ Send Q + Context to GPT      │
+          └─────────┬────────────────────┘
+                    ▼
+          ┌────────────────────┐
+          │ GPT Generates Answer│
+          └─────────┬───────────┘
+                    ▼
+          ┌─────────────────────┐
+          │ Display Answer to UI│
+          └─────────────────────┘
+
+
+
 
 
 
