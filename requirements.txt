@@ -1,1 +1,9 @@
-Streamlit
+streamlit
+openai
+faiss-cpu
+PyMuPDF
+numpy
+pandas
+langchain
+tiktoken
+requests
