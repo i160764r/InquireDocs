@@ -6,6 +6,7 @@ numpy
 pandas
 langchain
 langchain-community
+langchain-huggingface
 tiktoken
 requests
 transformers
