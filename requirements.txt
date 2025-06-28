@@ -5,6 +5,7 @@ PyMuPDF
 numpy
 pandas
 langchain
+langchain-community
 tiktoken
 requests
 transformers
