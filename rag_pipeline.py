@@ -7,15 +7,37 @@ from langchain.chains import RetrievalQA
 
 
 
-def extract_text_from_pdf(file: Union[str, "BytesIO"]) -> str:
+
+import fitz  # PyMuPDF
+
+def extract_text_from_pdf(file):
+    """
+    Extract text from a PDF file.
+
+    Args:
+        file: Can be a file-like object (uploaded file), bytes, or a file path (string).
+
+    Returns:
+        Extracted text as a string.
+    """
+    if hasattr(file, "read"):
+        # Reset pointer before reading
+        file.seek(0)
+        pdf_bytes = file.read()
+        doc = fitz.open(stream=pdf_bytes, filetype="pdf")
+    elif isinstance(file, bytes):
+        doc = fitz.open(stream=file, filetype="pdf")
+    elif isinstance(file, str):
+        doc = fitz.open(file)
+    else:
+        raise TypeError(f"Unsupported file type: {type(file)}")
+
     text = ""
-    # fitz.open accepts file path or file-like object (BytesIO)
-    with fitz.open(stream=file.read() if hasattr(file, "read") else file, filetype="pdf") as doc:
-        for page in doc:
-            text += page.get_text()
-    if hasattr(file, "seek"):
-        file.seek(0)  # reset file pointer after read
+    for page in doc:
+        text += page.get_text()
+    doc.close()
     return text
+
 
 
 def split_text_to_chunks(text: str, chunk_size: int = 1000, chunk_overlap: int = 100) -> List[str]:
