@@ -1,11 +1,11 @@
-# RAG-Based Domain-Specific Q&A System
+# InquireDocs — RAG-Based Domain-Specific Q&A System
 
-![Project Screenshot](docs/screenshot.png)
+![Project Screenshot](docs/screenshot.png)  
 ---
 
 ## 🚀 Project Overview
 
-This project is an AI-powered Question & Answer system that allows users to upload domain-specific documents (PDFs, TXT, etc.) and ask natural language questions about the content. It combines **Retrieval-Augmented Generation (RAG)** techniques using OpenAI’s language models with a vector database (FAISS) for efficient semantic search.
+InquireDocs is an AI-powered Question & Answer system that allows users to upload domain-specific documents (PDFs, TXT, etc.) and ask natural language questions about the content. It combines **Retrieval-Augmented Generation (RAG)techniques using OpenAI’s language models with a vector database (FAISS) for efficient semantic search.
 
 ---
 
@@ -33,29 +33,23 @@ This project is an AI-powered Question & Answer system that allows users to uplo
 
 ---
 
+
 ## 📦 Installation & Setup
 
 1. Clone the repo:
-
-   ```bash
    git clone https://github.com/i160764r/InquireDocs.git
    cd InquireDocs
 
 2. Create and activate a virtual environment (recommended):
-
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+    python -m venv venv
+    source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. Install dependencies:
-
     pip install -r requirements.txt
 
 4. Set your OpenAI API key as an environment variable:
-
     export OPENAI_API_KEY="your_api_key_here"  # Windows PowerShell: $env:OPENAI_API_KEY="your_api_key_here"
 5. Run the app:
-
     streamlit run app.py
 
 

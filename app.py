@@ -9,7 +9,7 @@ from langchain.chains import RetrievalQA
 
 # Configure page
 st.set_page_config(page_title="RAG Document Q&A", layout="centered")
-st.title("📄 RAG Document Q&A App")
+st.title("📄 Inquire document Q&A App")
 st.markdown("Upload a PDF and ask questions. The app will find answers using AI + Vector Search.")
 
 # Upload section
