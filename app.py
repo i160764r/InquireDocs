@@ -1,5 +1,5 @@
 import streamlit as st
-from rag_pipeline import (
+from inquire_docs import (
     extract_text_from_pdf,
     split_text_to_chunks,
     create_vector_store,

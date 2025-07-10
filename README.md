@@ -38,8 +38,8 @@ This project is an AI-powered Question & Answer system that allows users to uplo
 1. Clone the repo:
 
    ```bash
-   git clone https://github.com/i160764r/rag-doc-chat.git
-   cd rag-doc-chat
+   git clone https://github.com/i160764r/InquireDocs.git
+   cd InquireDocs
 
 2. Create and activate a virtual environment (recommended):
 
@@ -87,7 +87,7 @@ Copy
 Edit
 /rag_qa_system/
 ├── app.py                  # Streamlit app UI
-├── rag_pipeline.py         # Core logic for document processing and Q&A
+├── inquire_docs.py         # Core logic for document processing and Q&A
 ├── utils.py                # Utility functions (PDF loading, cleaning)
 ├── docs/                   # Sample documents and screenshots
 ├── requirements.txt        # Python dependencies
@@ -95,7 +95,7 @@ Edit
 📬 Demo & Deployment
 Live demo: (coming soon — will update here once deployed)
 
-Source code: https://github.com/i160764r/rag-doc-chat
+Source code: https://github.com/i160764r/InquireDocs
 
 🤝 Contributions
 Contributions are welcome! Feel free to open issues or submit pull requests to improve features, add support for more file types, or enhance the UI.
