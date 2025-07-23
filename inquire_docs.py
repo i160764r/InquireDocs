@@ -8,11 +8,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-
-
-
-import fitz  # PyMuPDF
-
 def extract_text_from_pdf(file):
     """
     Extract text from a PDF file.
